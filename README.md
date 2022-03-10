@@ -7,7 +7,7 @@ gitGraph:
 options
 {
     "nodeSpacing": 70,
-    "nodeRadius": 10
+    "nodeRadius": 6
 }
 end
 checkout master
