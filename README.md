@@ -1,7 +1,7 @@
 # vrl.sh
 This is the vrl website
 
-## Workflow
+### Workflow
 ```mermaid
 gitGraph:
 options
