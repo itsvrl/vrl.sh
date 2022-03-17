@@ -1,5 +1,3 @@
-[![CodeQL](https://github.com/itsvrl/vrl.sh/actions/workflows/codeql-analysis.yml/badge.svg?branch=stable)](https://github.com/itsvrl/vrl.sh/actions/workflows/codeql-analysis.yml)
-
 # vrl.sh
 This is the vrl website.
 
