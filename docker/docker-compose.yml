@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  proxy:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      - name=value
+    volumes:
+      - www:/usr/share/nginx/html
+  web:
+    image: nginx:latest
+
+
+
+volumes:
+  www:
+
+secrets:
+  API-TOKEN: {{ secrets.GITHUB_TOKEN }}
