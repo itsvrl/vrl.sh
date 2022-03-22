@@ -37,6 +37,3 @@ merge staging
 checkout staging
 commit
 ```
-
-## Files served from
-`/usr/share/www`
