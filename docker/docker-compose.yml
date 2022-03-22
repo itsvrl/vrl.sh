@@ -1,22 +1,26 @@
 version: '3.4'
 
 services:
-  proxy:
-    image: nginx:latest
+  web:
+    image: caddy:2.4.6-alpine
     ports:
       - 80:80
       - 443:443
-    environment:
-      - name=value
+    restart: unless-stopped
+    networks:
+      - frontend
     volumes:
-      - www:/usr/share/nginx/html
-  web:
-    image: nginx:latest
-
-
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile # Make sure the docker-compose file is in the same folder
+      - /src/html:/srv # Make sure the docker-compose file is above the /src folder 
+      - $HOME/.local/share/caddy:/data
+      - caddy_config:/config
+    command: ["--domain", "example.com"]
 
 volumes:
   www:
+  caddy_data:
+  caddy_config:
 
-secrets:
-  API-TOKEN: {{ secrets.GITHUB_TOKEN }}
+networks:
+  frontend:
+    name: "frontend"

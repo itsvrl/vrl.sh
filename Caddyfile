@@ -1,0 +1,16 @@
+vrl.sh {
+    encode zstd gzip
+    file_server src\html
+}
+
+portainer.vrl.sh {
+    reverse_proxy https://portainer.vrl.sh {
+        header_up Host caddy-box
+    }
+}
+
+
+localhost
+
+file_server
+reverse_proxy /api/* 127.0.0.1:9005

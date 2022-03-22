@@ -1,3 +1,12 @@
-- name: Integration and Packing
+name: Integration and Packing
+
+on:
+  pull_request:
+    - "stable"
+
 
 jobs:
+  build:
+    name: Checkout the branch
+    uses: actions/checkout@v2
+    
